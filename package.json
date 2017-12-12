@@ -2,9 +2,10 @@
   "name": "hello-world-lib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "ngc"
+    "build": "ngc",
+    "postinstall": "ngc"
   },
   "author": "",
   "license": "ISC",
