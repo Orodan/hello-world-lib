@@ -3,7 +3,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'hello-world-input',
-  template: '<input type="text" class="form-control" [(ngModel)]="data">',
+  template: '<input type="text" class="form-control" [(ngModel)]="data"> Hello {{ data }}',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => HelloWorldInputComponent),
@@ -12,15 +12,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class HelloWorldInputComponent implements ControlValueAccessor {
 
-  _data: string;
-
-  get data (): string {
-    return `Hello ${this._data}`;
-  }
-
-  set data (value: string) {
-    this._data = value;
-  }
+  data: string;
 
   onChange = (_) => { };
   onTouched = () => { };
